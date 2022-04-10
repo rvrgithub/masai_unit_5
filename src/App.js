@@ -3,7 +3,12 @@ import './App.css';
 
 function App() {
   let mobile =["android","blackberry","ipone","windows phone"]
-let manufecture =["samsung","HTC","Micomax","Apple"]
+// let manufecture =["samsung","HTC","Micomax","Apple"]
+let manufecture =[{
+  name:"samsung" , style:"Square" },
+{name:"HTC" ,style:"Square"},
+{name:"Micomax" ,style:"circle"},
+{name:"Apple"}]
   return (
   <div className='App'>
     <h1>Mobile Operating System </h1>
@@ -15,10 +20,10 @@ let manufecture =["samsung","HTC","Micomax","Apple"]
 <h1>Mobile Manufacture </h1>
 
     {manufecture.map((el)=>{
-   return   <li type="square" >
-        {el}
+   return   <li className={el.style}>
+        {el.name}
       </li>
-})};
+})}
 
   </div>
   );
